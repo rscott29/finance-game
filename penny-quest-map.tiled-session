@@ -1,0 +1,30 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "Modern_Exteriors_Complete_Tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "basic_tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "C:/Users/rksco/Downloads/modernexteriors-win/Modern_Exteriors_16x16",
+    "openFiles": [
+    ],
+    "project": "penny-quest-map.tiled-project",
+    "recentFiles": [
+        "Modern_Exteriors_Complete_Tileset.tsx",
+        "basic_tileset.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
