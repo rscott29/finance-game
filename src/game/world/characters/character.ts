@@ -1,10 +1,8 @@
-import { DomElementSchemaRegistry } from '@angular/compiler';
 import { getTargetPositionFromGameObjectPositionAndDirection } from '../../../app/utils/grid-utils';
 import { Coordinate } from '../../battle/types/monster-types';
 import { DIRECTION, Direction } from '../../shared/direction';
 import { exhaustiveGuard } from '../../../app/utils/guard';
 import { Player } from './player';
-import { RouterUpgradeInitializer } from '@angular/router/upgrade';
 
 export type CharacterIdleFrameConfig = {
   LEFT: number;
