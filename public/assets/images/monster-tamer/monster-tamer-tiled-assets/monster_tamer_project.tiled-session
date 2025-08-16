@@ -1,0 +1,320 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "#AxulArtīs_Basic-Top-down-interior_By_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "#collision": {
+            "scaleInDock": 1
+        },
+        "#encounter": {
+            "scaleInDock": 1
+        },
+        "#entrance": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/building.tmx": {
+            "expandedGroupLayers": [
+                10,
+                11
+            ],
+            "expandedObjectLayers": [
+                13,
+                11,
+                12,
+                6
+            ],
+            "scale": 0.75,
+            "selectedLayer": 7,
+            "viewCenter": {
+                "x": 403.33333333333326,
+                "y": 332.66666666666663
+            }
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/building.tmx#AxulArtīs_Basic-Top-down-interior_By_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/building.tmx#collision": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/building.tmx#encounter": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/building.tmx#entrance": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/my_custom_town_level.tmx": {
+            "expandedGroupLayers": [
+                19
+            ],
+            "expandedObjectLayers": [
+                23,
+                25,
+                20,
+                19,
+                18,
+                24
+            ],
+            "scale": 0.5,
+            "selectedLayer": 14,
+            "viewCenter": {
+                "x": 615,
+                "y": 1197
+            }
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/my_custom_town_level.tmx#AxulArtīs_Basic-Top-down-interior_By_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/my_custom_town_level.tmx#BasicPlains-tileset-Ver.2_by_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/my_custom_town_level.tmx#Beach-and-caves-tileset_by_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/my_custom_town_level.tmx#bushes": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/my_custom_town_level.tmx#collision": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/my_custom_town_level.tmx#encounter": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/my_custom_town_level.tmx#grass": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/my_custom_town_level.tmx#house": {
+            "scaleInDock": 1
+        },
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/my_custom_town_level.tmx#npc_paths": {
+            "scaleInDock": 1
+        },
+        "building1.tmx": {
+            "expandedGroupLayers": [
+                8,
+                3
+            ],
+            "expandedObjectLayers": [
+                9,
+                11,
+                10,
+                7,
+                8
+            ],
+            "scale": 0.0625,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 832,
+                "y": 6440
+            }
+        },
+        "building1.tmx#AxulArtīs_Basic-Top-down-interior_By_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "building1.tmx#collision": {
+            "scaleInDock": 1
+        },
+        "building1.tmx#encounter": {
+            "scaleInDock": 1
+        },
+        "building1.tmx#entrance": {
+            "scaleInDock": 1
+        },
+        "building2.tmx": {
+            "expandedGroupLayers": [
+                3
+            ],
+            "expandedObjectLayers": [
+                7
+            ],
+            "scale": 1,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 416,
+                "y": 430.5
+            }
+        },
+        "building2.tmx#AxulArtīs_Basic-Top-down-interior_By_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "building2.tmx#collision": {
+            "scaleInDock": 1
+        },
+        "building2.tmx#encounter": {
+            "scaleInDock": 1
+        },
+        "building2.tmx#entrance": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level.tmx": {
+            "expandedGroupLayers": [
+                19
+            ],
+            "expandedObjectLayers": [
+                19,
+                24,
+                23,
+                18,
+                20,
+                25
+            ],
+            "scale": 0.43,
+            "selectedLayer": 14,
+            "viewCenter": {
+                "x": 863.953488372093,
+                "y": 1375.5813953488373
+            }
+        },
+        "my_custom_town_level.tmx#AxulArtīs_Basic-Top-down-interior_By_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "my_custom_town_level.tmx#BasicPlains-tileset-Ver.2_by_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level.tmx#Beach-and-caves-tileset_by_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level.tmx#bushes": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level.tmx#collision": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level.tmx#encounter": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level.tmx#entrance": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level.tmx#grass": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level.tmx#house": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level.tmx#npc_paths": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "my_custom_town_level_2.tmx": {
+            "expandedObjectLayers": [
+                23
+            ],
+            "scale": 0.5098,
+            "selectedLayer": 12,
+            "viewCenter": {
+                "x": 923.8917222440172,
+                "y": 1634.9548842683405
+            }
+        },
+        "my_custom_town_level_2.tmx#AxulArtīs_Basic-Top-down-interior_By_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_2.tmx#BasicPlains-tileset-Ver.2_by_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_2.tmx#Beach-and-caves-tileset_by_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_2.tmx#bushes": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_2.tmx#collision": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_2.tmx#encounter": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_2.tmx#entrance": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_2.tmx#grass": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_2.tmx#house": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_2.tmx#npc_paths": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_3.tmx": {
+            "scale": 0.16197150735294116,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1617.5684494254506,
+                "y": 3417.2676975457516
+            }
+        },
+        "my_custom_town_level_3.tmx#AxulArtīs_Basic-Top-down-interior_By_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_3.tmx#BasicPlains-tileset-Ver.2_by_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_3.tmx#Beach-and-caves-tileset_by_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_3.tmx#bushes": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_3.tmx#collision": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_3.tmx#encounter": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_3.tmx#entrance": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_3.tmx#grass": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_3.tmx#house": {
+            "scaleInDock": 1
+        },
+        "my_custom_town_level_3.tmx#npc_paths": {
+            "scaleInDock": 1
+        }
+    },
+    "last.exportedFilePath": "/Users/swestover/Desktop/monster-tamer-tiled-assets/exported-level-data-3",
+    "last.imagePath": "C:/Users/rksco/code/finance-game/public/assets/images/monster-tamer/monster-tamer-tiled-assets",
+    "last.objectTypesPath": "/Users/swestover/Desktop/monster-tamer-tiled-assets/custom_types_4.json",
+    "map.height": 9,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 64,
+    "map.tileWidth": 64,
+    "map.width": 13,
+    "openFiles": [
+    ],
+    "project": "monster_tamer_project.tiled-project",
+    "property.type": "encounterTileType",
+    "recentFiles": [
+        "my_custom_town_level.tmx",
+        "my_custom_town_level_3.tmx",
+        "my_custom_town_level_2.tmx",
+        "building1.tmx",
+        "building2.tmx",
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/my_custom_town_level.tmx",
+        "C:/Users/swestover/Desktop/monster_tamer_tiled_project/building.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 64,
+        "width": 64
+    }
+}

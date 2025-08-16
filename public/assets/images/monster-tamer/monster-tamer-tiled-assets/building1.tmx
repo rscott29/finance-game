@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="13" height="9" tilewidth="64" tileheight="64" infinite="0" nextlayerid="12" nextobjectid="6">
+ <tileset firstgid="1" name="AxulArtīs_Basic-Top-down-interior_By_AxulArt_scaled_4x_pngcrushed" tilewidth="64" tileheight="64" tilecount="120" columns="12">
+  <image source="AxulArti╠äs_Basic-Top-down-interior_By_AxulArt_scaled_4x_pngcrushed.png" width="768" height="640"/>
+ </tileset>
+ <tileset firstgid="121" name="encounter" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="encounter.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="122" name="collision" tilewidth="64" tileheight="64" tilecount="1" columns="1">
+  <image source="collision.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="123" name="entrance" tilewidth="64" tileheight="64" tilecount="3" columns="3">
+  <image source="entrance.png" width="192" height="64"/>
+ </tileset>
+ <group id="3" name="Main-Scene" locked="1">
+  <layer id="6" name="background" width="13" height="9" locked="1">
+   <data encoding="csv">
+0,91,91,91,91,91,91,91,91,91,91,91,0,
+0,99,99,99,99,99,99,99,99,99,99,99,0,
+0,112,112,112,112,112,112,112,112,112,112,112,0,
+0,112,112,112,94,95,95,95,95,96,112,112,0,
+0,112,112,112,106,107,107,107,107,108,112,112,0,
+0,112,112,112,118,119,119,119,119,120,112,112,0,
+0,112,112,112,112,112,112,112,112,112,112,112,0,
+0,112,112,112,112,112,112,112,112,112,112,112,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+  <layer id="5" name="decorations" width="13" height="9" locked="1">
+   <data encoding="csv">
+0,0,0,0,0,1,46,47,1,0,0,0,0,
+0,16,17,0,0,25,58,59,25,72,90,0,0,
+0,28,29,0,0,61,61,61,61,0,0,0,0,
+0,0,0,0,0,0,42,43,0,0,0,0,0,
+0,0,0,0,0,64,54,55,52,0,0,0,0,
+0,0,0,0,0,0,66,67,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+  <layer id="4" name="entrance" width="13" height="9" locked="1">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,123,124,125,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+ </group>
+ <layer id="2" name="Foreground" width="13" height="9" locked="1">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,42,43,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="1" name="Collision" width="13" height="9" locked="1" opacity="0.56">
+  <data encoding="csv">
+122,122,122,122,122,122,122,122,122,122,122,122,122,
+122,122,122,122,122,122,122,122,122,122,122,122,122,
+122,0,0,0,0,0,0,0,0,0,0,0,122,
+122,0,0,0,0,0,0,0,0,0,0,0,122,
+122,0,0,0,0,122,122,122,122,0,0,0,122,
+122,0,0,0,0,0,0,0,0,0,0,0,122,
+122,0,0,0,0,0,0,0,0,0,0,0,122,
+122,0,0,0,0,0,0,0,0,0,0,0,122,
+122,122,122,122,122,122,122,122,122,122,122,122,122
+</data>
+ </layer>
+ <objectgroup id="7" name="Scene-Transitions" locked="1">
+  <object id="1" type="entrance" gid="121" x="320" y="576" width="64" height="64">
+   <properties>
+    <property name="connects_to" value="main_1"/>
+    <property name="entrance_id" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="10" name="Area-Metadata">
+  <object id="3" type="area_metadata" gid="121" x="128" y="448" width="64" height="64">
+   <properties>
+    <property name="faint_location" value="building_1"/>
+    <property name="id" type="int" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="11" name="Revive-Location">
+  <object id="4" gid="121" x="576" y="320" width="64" height="64"/>
+ </objectgroup>
+ <group id="8" name="NPC" locked="1">
+  <objectgroup id="9" name="NPC1" locked="1">
+   <object id="2" type="npc" gid="121" x="576" y="256" width="64" height="64">
+    <properties>
+     <property name="id" type="int" value="1"/>
+    </properties>
+   </object>
+  </objectgroup>
+ </group>
+</map>

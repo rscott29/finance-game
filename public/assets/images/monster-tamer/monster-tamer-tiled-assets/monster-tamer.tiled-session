@@ -1,0 +1,45 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "#BasicPlains-tileset-Ver.2_by_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "#Beach-and-caves-tileset_by_AxulArt_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        },
+        "#bushes": {
+            "scaleInDock": 1
+        },
+        "#grass": {
+            "scaleInDock": 1
+        },
+        "#house2_scaled_4x_pngcrushed": {
+            "scaleInDock": 1
+        }
+    },
+    "last.imagePath": "C:/Users/rksco/code/finance-game/public/assets/images/monster-tamer/monster-tamer-tiled-assets",
+    "map.height": 10,
+    "map.tileHeight": 64,
+    "map.tileWidth": 64,
+    "map.width": 10,
+    "openFiles": [
+    ],
+    "project": "monster-tamer.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 64,
+        "width": 64
+    }
+}

@@ -1,15 +1,14 @@
-html, body {
-  margin: 0;
-  padding: 0;
+html,
+body,
+.container {
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
-  height: 100%;
-  width: 100%;
+  background: #d7d7d7;
 }
 
-// #game-container {
-//   height: 100%;
-//   width: 100%;
-//   display: flex;
-//   justify-content: center; /* center horizontally */
-//   align-items: center;     /* center vertically */
-// }
+@font-face {
+  font-family: Kenny-Future-Narrow;
+  src: url('../public/assets/fonts/kenneys-fonts/Kenney-Future-Narrow.ttf') format('truetype');
+}
