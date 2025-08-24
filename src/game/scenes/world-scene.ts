@@ -11,6 +11,7 @@ import { CANNOT_READ_SIGN_TEXT, SAMPLE_TEXT } from '../../app/utils/text-utils';
 import { dialogUI } from '../world/dialog-ui';
 import { NPC, NPCMovementPattern } from '../world/characters/npc';
 import { DataUtils } from '../../app/utils/data-utils';
+import { EventBus } from '../EventBus';
 
 const TILED_SIGN_PROPERTY = {
   MESSAGE: 'message',
@@ -104,6 +105,13 @@ export class WorldScene extends Scene {
       otherCharactersToCheckForCollisionsWith: this.npcs,
     });
 
+    // Emit initial player state
+    EventBus.emit('player-moved', {
+      x: this.player.sprite.x,
+      y: this.player.sprite.y,
+    });
+    EventBus.emit('player-direction-changed', this.player.direction);
+
     this.cameras.main.startFollow(this.player.sprite);
 
     this.npcs?.forEach(npcs => {
@@ -123,7 +131,17 @@ export class WorldScene extends Scene {
     }
     const selectedDirection = this.controls?.getDirectionKeyPressedDown();
     if (selectedDirection !== DIRECTION.NONE && !this.isPlayerInputLocked()) {
+      // Store previous direction to compare
+      const previousDirection = this.player?.direction;
+
+      // Emit movement start event
+      EventBus.emit('player-movement-started');
       this.player?.moveCharacter(selectedDirection ?? DIRECTION.NONE);
+
+      // Emit direction change if it actually changed
+      if (selectedDirection !== previousDirection) {
+        EventBus.emit('player-direction-changed', selectedDirection);
+      }
     }
     if (this.controls?.wasSpaceKeyPressed() && !this.player?.isMoving) {
       this.handlePlayerInteraction();
@@ -143,6 +161,8 @@ export class WorldScene extends Scene {
       if (this.npcPlayerIsInteractingWith) {
         this.npcPlayerIsInteractingWith.isTalkingToPlayer = false;
         this.npcPlayerIsInteractingWith = undefined;
+        // Emit interaction ended event
+        EventBus.emit('npc-interaction-ended');
       }
       return;
     }
@@ -195,6 +215,8 @@ export class WorldScene extends Scene {
         this.dialogUI?.showDialogModal(nearbyNpc.messages);
         nearbyNpc.isTalkingToPlayer = true;
         this.npcPlayerIsInteractingWith = nearbyNpc;
+        // Emit NPC interaction started event
+        EventBus.emit('npc-interaction-started', nearbyNpc);
 
         return;
       }
@@ -202,6 +224,16 @@ export class WorldScene extends Scene {
   }
 
   private handlePlayerMovementUpdate() {
+    // Emit movement finished event
+    EventBus.emit('player-movement-finished');
+
+    // Emit updated player position and direction
+    EventBus.emit('player-moved', {
+      x: this.player?.sprite.x,
+      y: this.player?.sprite.y,
+    });
+    EventBus.emit('player-direction-changed', this.player?.direction);
+
     dataManager.store.set(DATA_MANAGER_STORE_KEYS.PLAYER_POSITION, {
       x: this.player?.sprite.x,
       y: this.player?.sprite.y,
@@ -222,6 +254,8 @@ export class WorldScene extends Scene {
       this.wildMonsterEncountered = Math.random() < 0.2;
       if (this.wildMonsterEncountered) {
         console.log('player encountered a wild monster');
+        // Emit wild encounter event
+        EventBus.emit('wild-encounter-triggered');
         this.cameras.main.fadeOut(2000);
         this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, () => {
           this.scene.start(SCENE_KEYS.BATTLE_SCENE);

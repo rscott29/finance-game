@@ -6,8 +6,7 @@ import { TILED_SIGN_PROPERTY } from '../../../game/scenes/world-scene.constants'
 import { WORLD_ASSET_KEYS } from '../../../game/shared/asset-keys.enum';
 import { DIRECTION } from '../../../game/shared/direction';
 import { dialogUI } from '../../../game/world/dialog-ui';
-import { NPCService } from '../../services/npc.service';
-import { PlayerService } from '../../services/player.service';
+import { WorldFacadeService } from '../../features/world/services/world-facade.service';
 import { Controls } from '../../utils/controls';
 import { CANNOT_READ_SIGN_TEXT, SAMPLE_TEXT } from '../../utils/text-utils';
 
@@ -25,7 +24,7 @@ export class WorldSceneComponent implements OnInit {
   private wildMonsterEncountered = false;
   private npcPlayerIsInteractingWith?: any;
 
-  constructor(private npcService: NPCService, private playerService: PlayerService) {}
+  constructor(private worldFacade: WorldFacadeService) {}
 
   ngOnInit() {
     this.initializeScene();
@@ -46,14 +45,11 @@ export class WorldSceneComponent implements OnInit {
       throw new Error('Collision layer could not be created.');
     }
 
-    // Create NPCs
-    const npcs = this.npcService.createNPCs(map, this.scene);
-
-    // Initialize player
-    const player = this.playerService.initializePlayer({
+    // Initialize world using facade
+    const { player, npcs } = this.worldFacade.initializeWorld({
       scene: this.scene,
+      map,
       collisionLayer,
-      npcs,
       onMovementFinished: () => this.handlePlayerMovementUpdate(),
     });
 
@@ -61,7 +57,7 @@ export class WorldSceneComponent implements OnInit {
     this.scene.cameras.main.startFollow(player.sprite);
 
     // Set up collisions
-    npcs.forEach(npc => {
+    npcs.forEach((npc: any) => {
       npc.addCharacterToCheckForCollisionsWith(player);
     });
 
@@ -114,28 +110,28 @@ export class WorldSceneComponent implements OnInit {
 
   private update(time: number) {
     if (this.wildMonsterEncountered) {
-      this.playerService.updatePlayer(time);
+      this.worldFacade.updatePlayer(time);
       return;
     }
 
     const selectedDirection = this.controls.getDirectionKeyPressedDown();
     if (selectedDirection !== DIRECTION.NONE && !this.isPlayerInputLocked()) {
-      this.playerService.movePlayer(selectedDirection);
+      this.worldFacade.movePlayer(selectedDirection);
     }
 
-    if (this.controls.wasSpaceKeyPressed() && !this.playerService.player$()?.isMoving) {
+    if (this.controls.wasSpaceKeyPressed() && !this.worldFacade.player$()?.isMoving) {
       this.handlePlayerInteraction();
     }
 
-    this.playerService.updatePlayer(time);
-    this.npcService.updateNPCs(time);
+    this.worldFacade.updatePlayer(time);
+    this.worldFacade.updateNPCs(time);
   }
 
   private handlePlayerInteraction() {
     if (this.dialogUI.isAnimationPlaying) return;
     if (this.handleExistingDialog()) return;
 
-    const targetPosition = this.playerService.getInteractionTarget();
+    const targetPosition = this.worldFacade.getInteractionTarget();
     if (!targetPosition) return;
 
     const nearbySign = this.findNearbySign(targetPosition);
@@ -181,33 +177,33 @@ export class WorldSceneComponent implements OnInit {
       (prop: { name: string }) => prop.name === TILED_SIGN_PROPERTY.MESSAGE
     )?.value;
 
-    const usePlaceholderText = this.playerService.player$()?.direction !== DIRECTION.UP;
+    const usePlaceholderText = this.worldFacade.player$()?.direction !== DIRECTION.UP;
     const textToShow = usePlaceholderText ? CANNOT_READ_SIGN_TEXT : msg || SAMPLE_TEXT;
     this.dialogUI.showDialogModal([textToShow]);
   }
 
   private findNearbyNPC(targetPosition: { x: number; y: number }) {
-    return this.npcService
+    return this.worldFacade
       .npcs$()
-      .find(npc => npc.sprite.x === targetPosition.x && npc.sprite.y === targetPosition.y);
+      .find((npc: any) => npc.sprite.x === targetPosition.x && npc.sprite.y === targetPosition.y);
   }
 
   private handleNPCInteraction(npc: any) {
-    npc.facePlayer(this.playerService.player$()?.direction ?? DIRECTION.NONE);
+    npc.facePlayer(this.worldFacade.player$()?.direction ?? DIRECTION.NONE);
     this.dialogUI.showDialogModal(npc.messages);
     npc.isTalkingToPlayer = true;
     this.npcPlayerIsInteractingWith = npc;
   }
 
   private handlePlayerMovementUpdate() {
-    this.playerService.updatePlayerPosition();
+    this.worldFacade.updatePlayerPosition();
     this.checkForRandomEncounter();
   }
 
   private checkForRandomEncounter() {
-    if (!this.encounterLayer || !this.playerService.player$()?.sprite) return;
+    if (!this.encounterLayer || !this.worldFacade.player$()?.sprite) return;
 
-    const player = this.playerService.player$();
+    const player = this.worldFacade.player$();
     const isInEncounterZone =
       this.encounterLayer.getTileAtWorldXY(player!.sprite.x, player!.sprite.y, true).index !== -1;
 

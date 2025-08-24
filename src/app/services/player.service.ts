@@ -4,11 +4,12 @@ import { DATA_MANAGER_STORE_KEYS, dataManager } from '../../app/utils/data-manag
 import { Direction, DIRECTION } from '../../game/shared/direction';
 import { getTargetPositionFromGameObjectPositionAndDirection } from '../../app/utils/grid-utils';
 import { NPC } from '../../game/world/characters/npc';
+import { IPlayerService } from '../features/world/interfaces/world.interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
-export class PlayerService {
+export class PlayerService implements IPlayerService {
   private player = signal<Player | null>(null);
   readonly player$ = this.player.asReadonly();
 

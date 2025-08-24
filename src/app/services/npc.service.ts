@@ -3,11 +3,12 @@ import { TILE_SIZE } from '../../config';
 import { CUSTOM_TILED_TYPES, TILED_NPC_PROPERTY } from '../../game/scenes/world-scene.constants';
 import { DIRECTION } from '../../game/shared/direction';
 import { NPC, NPCMovementPattern } from '../../game/world/characters/npc';
+import { INPCService } from '../features/world/interfaces/world.interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
-export class NPCService {
+export class NPCService implements INPCService {
   private npcs = signal<NPC[]>([]);
   readonly npcs$ = this.npcs.asReadonly();
 

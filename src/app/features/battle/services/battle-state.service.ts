@@ -3,6 +3,7 @@ import { PlayerBattleMonster } from '../../../../game/battle/monsters/player-bat
 import { EnemyBattleMonster } from '../../../../game/battle/monsters/enemy-battle-monster';
 import { AttackManager } from '../../../../game/battle/attacks/attack-manager';
 import { StateMachine } from '../../../utils/state-machine';
+import { IBattleState } from '../interfaces/battle.interfaces';
 
 export const BATTLE_STATES = {
   INTRO: 'INTRO',
@@ -28,7 +29,7 @@ interface BattleStateContext {
 @Injectable({
   providedIn: 'root',
 })
-export class BattleStateService {
+export class BattleStateService implements IBattleState {
   private currentState = signal<BattleState>('INTRO');
   private stateMachine: StateMachine | null = null;
   private attackManager: AttackManager | null = null;

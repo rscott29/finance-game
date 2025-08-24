@@ -5,7 +5,7 @@ import {
   AttackManager as PhaserAttackManager,
 } from '../../../../game/battle/attacks/attack-manager';
 import { AttackKeys } from '../../../../game/battle/attacks/attack-keys';
-import { IAttackManager } from '../models/battle.interfaces';
+import { IAttackManager } from '../interfaces/battle.interfaces';
 
 @Injectable({
   providedIn: 'root',

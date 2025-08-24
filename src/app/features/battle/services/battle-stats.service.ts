@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Signal, computed, signal } from '@angular/core';
+import { IBattleStats } from '../interfaces/battle.interfaces';
 
 export interface BattleStats {
   enemyHealth: number;
@@ -10,7 +11,7 @@ export interface BattleStats {
 @Injectable({
   providedIn: 'root',
 })
-export class BattleStatsService {
+export class BattleStatsService implements IBattleStats {
   private stats = signal<BattleStats>({
     enemyHealth: 100,
     playerHealth: 100,

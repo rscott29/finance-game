@@ -13,6 +13,7 @@ import { ATTACK_KEYS } from '../battle/attacks/attack-keys';
 import { createSceneTransition } from '../../app/utils/scene-transition';
 import { DIRECTION, Direction } from '../shared/direction';
 import { Controls } from '../../app/utils/controls';
+import { EventBus } from '../EventBus';
 
 const BATTLE_STATES = {
   INTRO: 'INTRO',
@@ -40,6 +41,9 @@ export class BattleScene extends Scene {
   }
   init() {}
   create() {
+    // Emit battle started event
+    EventBus.emit('battle-started');
+
     // render out the player and enemy monsters
     const background = new Background(this);
     background.showForest();
@@ -70,6 +74,16 @@ export class BattleScene extends Scene {
         currentLevel: 5,
       },
       skipBattleAnimations: SKIP_BATTLE_ANIMIATIONS,
+    });
+
+    // Emit initial health states
+    EventBus.emit('player-health-changed', {
+      current: this.activePlayerMonster.currentHealth,
+      max: this.activePlayerMonster.maxHealth,
+    });
+    EventBus.emit('enemy-health-changed', {
+      current: this.activeEnemyMonster.currentHealth,
+      max: this.activeEnemyMonster.maxHealth,
     });
 
     // render out the main info and sub info panes
@@ -136,6 +150,11 @@ export class BattleScene extends Scene {
                 this.activeEnemyMonster?.takeDamage(
                   this.activePlayerMonster?.baseAttack ?? 0,
                   () => {
+                    // Emit health change event
+                    EventBus.emit('enemy-health-changed', {
+                      current: this.activeEnemyMonster?.currentHealth,
+                      max: this.activeEnemyMonster?.maxHealth,
+                    });
                     this.enemyAttack();
                   }
                 );
@@ -166,6 +185,11 @@ export class BattleScene extends Scene {
                 this.activePlayerMonster?.takeDamage(
                   this.activeEnemyMonster?.baseAttack || 0,
                   () => {
+                    // Emit health change event
+                    EventBus.emit('player-health-changed', {
+                      current: this.activePlayerMonster?.currentHealth,
+                      max: this.activePlayerMonster?.maxHealth,
+                    });
                     this.battleStateMachine?.setState(BATTLE_STATES.POST_ATTACK_CHECK);
                   }
                 );
@@ -223,6 +247,8 @@ export class BattleScene extends Scene {
     this.battleStateMachine.addState({
       name: BATTLE_STATES.INTRO,
       onEnter: () => {
+        // Emit state change
+        EventBus.emit('battle-state-changed', BATTLE_STATES.INTRO);
         // wait for any scene setup and transitions to complete
         createSceneTransition(this, {
           skipSceneTransition: SKIP_BATTLE_ANIMIATIONS,
@@ -273,6 +299,7 @@ export class BattleScene extends Scene {
     this.battleStateMachine.addState({
       name: BATTLE_STATES.PLAYER_INPUT,
       onEnter: () => {
+        EventBus.emit('battle-state-changed', BATTLE_STATES.PLAYER_INPUT);
         this.battleMenu?.showMainBattleMenu();
       },
     });
@@ -310,6 +337,8 @@ export class BattleScene extends Scene {
     this.battleStateMachine.addState({
       name: BATTLE_STATES.FINISHED,
       onEnter: () => {
+        EventBus.emit('battle-state-changed', BATTLE_STATES.FINISHED);
+        EventBus.emit('battle-ended');
         this.transitionToNextScene();
       },
     });

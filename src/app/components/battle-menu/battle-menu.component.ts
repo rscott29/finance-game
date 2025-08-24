@@ -1,6 +1,9 @@
-import { Component, computed } from '@angular/core';
+import { Component, computed, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BattleFacadeService } from '../../services/battle-facade.service';
+import {
+  IBattleFacade,
+  BATTLE_FACADE_TOKEN,
+} from '../../features/battle/interfaces/battle.interfaces';
 import { BATTLE_MENU_OPTIONS } from '../../../game/battle/ui/menu/battle-menu-config';
 import { ACTIVE_BATTLE_MENU } from '../../../game/battle/ui/menu/battle-menu-options';
 
@@ -17,5 +20,5 @@ export class BattleMenuComponent {
 
   options = BATTLE_MENU_OPTIONS;
 
-  constructor(private readonly battleFacade: BattleFacadeService) {}
+  constructor(@Inject(BATTLE_FACADE_TOKEN) private readonly battleFacade: IBattleFacade) {}
 }
