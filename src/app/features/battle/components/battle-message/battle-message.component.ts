@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed } from '@angular/core';
-import { BattleFacadeService } from '../../services/battle-facade.service';
+import { Component, computed, Inject } from '@angular/core';
+import { IBattleFacade, BATTLE_FACADE_TOKEN } from '../../interfaces/battle.interfaces';
 
 @Component({
   selector: 'app-battle-message',
@@ -43,7 +43,7 @@ export class BattleMessageComponent {
   showMessage = computed(() => this.battleFacade.isAnimating());
   message = computed(() => ''); // TODO: Add message signal to facade
 
-  constructor(private readonly battleFacade: BattleFacadeService) {}
+  constructor(@Inject(BATTLE_FACADE_TOKEN) private readonly battleFacade: IBattleFacade) {}
 
   onMessageClick() {
     this.battleFacade.nextBattleState();

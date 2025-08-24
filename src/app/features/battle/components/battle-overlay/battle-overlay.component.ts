@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy, computed, signal } from '@angular/core';
-import { BattleFacadeService } from '../../services/battle-facade.service';
+import { Component, OnInit, OnDestroy, computed, signal, Inject } from '@angular/core';
+import { IBattleFacade, BATTLE_FACADE_TOKEN } from '../../interfaces/battle.interfaces';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -258,27 +258,27 @@ export class BattleOverlayComponent implements OnInit, OnDestroy {
 
   private subscriptions: Subscription[] = [];
 
-  constructor(private readonly battleFacade: BattleFacadeService) {}
+  constructor(@Inject(BATTLE_FACADE_TOKEN) private readonly battleFacade: IBattleFacade) {}
 
   ngOnInit() {
     // Subscribe to battle facade observables
     this.subscriptions.push(
-      this.battleFacade.playerHealth$.subscribe(health => {
+      this.battleFacade.playerHealth$.subscribe((health: any) => {
         this.playerHealth.set(health);
         this.addEvent('HEALTH', `Player: ${health.current}/${health.max}`);
       }),
 
-      this.battleFacade.enemyHealth$.subscribe(health => {
+      this.battleFacade.enemyHealth$.subscribe((health: any) => {
         this.enemyHealth.set(health);
         this.addEvent('HEALTH', `Enemy: ${health.current}/${health.max}`);
       }),
 
-      this.battleFacade.battleState$.subscribe(state => {
+      this.battleFacade.battleState$.subscribe((state: any) => {
         this.battleState.set(state);
         this.addEvent('STATE', state);
       }),
 
-      this.battleFacade.battleActive$.subscribe(active => {
+      this.battleFacade.battleActive$.subscribe((active: any) => {
         this.battleActive.set(active);
         if (active) {
           this.battleStartTime = Date.now();

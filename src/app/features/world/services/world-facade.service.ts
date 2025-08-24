@@ -2,7 +2,6 @@ import { Injectable, Inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { EventBus } from '../../../../game/EventBus';
 import { NPC } from '../../../../game/world/characters/npc';
-import { Player } from '../../../../game/world/characters/player';
 import { Direction, DIRECTION } from '../../../../game/shared/direction';
 import {
   IWorldFacade,

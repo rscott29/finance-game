@@ -1,4 +1,4 @@
-import { Component, viewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PhaserGame } from './phaser-game/phaser-game.component';
 import { BattleOverlayComponent } from './features/battle/components/battle-overlay/battle-overlay.component';

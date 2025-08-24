@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit, computed } from '@angular/core';
+import { Component, OnDestroy, OnInit, computed, Inject } from '@angular/core';
 import { Scene } from 'phaser';
 import { Background } from '../../../../../game/battle/ui/background';
 import { SCENE_KEYS } from '../../../../../game/scenes/scene-keys';
 import { BattleMessageComponent } from '../battle-message/battle-message.component';
 import { Controls } from '../../../../utils/controls';
-import { BattleFacadeService } from '../../services/battle-facade.service';
+import { IBattleFacade, BATTLE_FACADE_TOKEN } from '../../interfaces/battle.interfaces';
 
 @Component({
   selector: 'app-battle-scene',
@@ -32,7 +32,7 @@ export class BattleSceneComponent implements OnInit, OnDestroy {
 
   readonly currentState = computed(() => this.battleFacade.currentState());
 
-  constructor(private readonly battleFacade: BattleFacadeService) {}
+  constructor(@Inject(BATTLE_FACADE_TOKEN) private readonly battleFacade: IBattleFacade) {}
 
   ngOnInit() {
     this.initializeScene();

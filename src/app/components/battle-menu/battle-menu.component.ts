@@ -5,7 +5,6 @@ import {
   BATTLE_FACADE_TOKEN,
 } from '../../features/battle/interfaces/battle.interfaces';
 import { BATTLE_MENU_OPTIONS } from '../../../game/battle/ui/menu/battle-menu-config';
-import { ACTIVE_BATTLE_MENU } from '../../../game/battle/ui/menu/battle-menu-options';
 
 @Component({
   selector: 'app-battle-menu',
