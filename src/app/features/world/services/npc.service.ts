@@ -1,9 +1,12 @@
 import { Injectable, signal } from '@angular/core';
-import { TILE_SIZE } from '../../config';
-import { CUSTOM_TILED_TYPES, TILED_NPC_PROPERTY } from '../../game/scenes/world-scene.constants';
-import { DIRECTION } from '../../game/shared/direction';
-import { NPC, NPCMovementPattern } from '../../game/world/characters/npc';
-import { INPCService } from '../features/world/interfaces/world.interfaces';
+import { TILE_SIZE } from '../../../../config';
+import {
+  CUSTOM_TILED_TYPES,
+  TILED_NPC_PROPERTY,
+} from '../../../../game/scenes/world-scene.constants';
+import { DIRECTION } from '../../../../game/shared/direction';
+import { NPC, NPCMovementPattern } from '../../../../game/world/characters/npc';
+import { INPCService } from '../interfaces/world.interfaces';
 
 @Injectable({
   providedIn: 'root',

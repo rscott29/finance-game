@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { MONSTER_ASSET_KEYS } from '../../game/shared/asset-keys.enum';
-import { EnemyBattleMonster } from '../../game/battle/monsters/enemy-battle-monster';
-import { PlayerBattleMonster } from '../../game/battle/monsters/player-battle-monster';
-import { SKIP_BATTLE_ANIMIATIONS } from '../../config';
+import { MONSTER_ASSET_KEYS } from '../../../game/shared/asset-keys.enum';
+import { EnemyBattleMonster } from '../../../game/battle/monsters/enemy-battle-monster';
+import { PlayerBattleMonster } from '../../../game/battle/monsters/player-battle-monster';
+import { SKIP_BATTLE_ANIMIATIONS } from '../../../config';
 
 export interface MonsterConfig {
   scene: Phaser.Scene;

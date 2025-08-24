@@ -5,8 +5,8 @@ import {
   PLAYER_SERVICE_TOKEN,
 } from '../features/world/interfaces/world.interfaces';
 import { WorldFacadeService } from '../features/world/services/world-facade.service';
-import { NPCService } from '../services/npc.service';
-import { PlayerService } from '../services/player.service';
+import { NPCService } from '../features/world/services/npc.service';
+import { PlayerService } from '../features/world/services/player.service';
 
 export const WORLD_PROVIDERS: Provider[] = [
   {

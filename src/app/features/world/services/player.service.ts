@@ -1,10 +1,10 @@
 import { Injectable, signal } from '@angular/core';
-import { Player } from '../../game/world/characters/player';
-import { DATA_MANAGER_STORE_KEYS, dataManager } from '../../app/utils/data-manager';
-import { Direction, DIRECTION } from '../../game/shared/direction';
-import { getTargetPositionFromGameObjectPositionAndDirection } from '../../app/utils/grid-utils';
-import { NPC } from '../../game/world/characters/npc';
-import { IPlayerService } from '../features/world/interfaces/world.interfaces';
+import { Player } from '../../../../game/world/characters/player';
+import { DATA_MANAGER_STORE_KEYS, dataManager } from '../../../utils/data-manager';
+import { Direction, DIRECTION } from '../../../../game/shared/direction';
+import { getTargetPositionFromGameObjectPositionAndDirection } from '../../../utils/grid-utils';
+import { NPC } from '../../../../game/world/characters/npc';
+import { IPlayerService } from '../interfaces/world.interfaces';
 
 @Injectable({
   providedIn: 'root',
